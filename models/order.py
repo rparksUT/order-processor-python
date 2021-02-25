@@ -30,10 +30,10 @@ class Order:
         for item in self.lineItems:
             counter += 1
             invoice += f'Line Item #{counter}:\t'
-            invoice += f'Part#: {item.partNum}, CostPerUnit($): ${item.unitCost}, Quantity: {item.quantity}\n'
-        invoice += f'\nSubtotal = ${self.subtotal}\n'
+            invoice += f'Part#: {item.partNum}, CostPerUnit($): ${item.unitCost:.2f}, Quantity: {item.quantity}\n'
+        invoice += f'\nSubtotal = ${self.subtotal:.2f}\n'
         invoice += f'--------------------------------------------\n'
-        invoice += f'Total(7.5% tax included) = ${total}\n'
+        invoice += f'Total(7.5% tax included) = ${total:.2f}\n'
         return invoice
 
 class Customer:
